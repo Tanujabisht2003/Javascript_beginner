@@ -158,3 +158,110 @@
 // myCar2.logDriver();
 // console.log(myCar2.maxspeed);
 // myCar2.drive(50,3);
+
+// constructor function
+// var Car = function(maxspeed, driver){
+//     this.maxspeed = maxspeed;
+//     this.driver = driver;
+//     this.drive = function(speed,time){
+//         console.log(speed*time);
+//     }
+//     this.logDriver = function(){
+//         console.log("driver name is " + this.driver);
+//     };
+// }
+// var myCar = new Car(70, "ninja Man");
+// var myCar2 = new Car(48, "ninja thor");
+// var myCar3 = new Car(24, "ninja Manu");
+
+// myCar.drive(38,4);
+// myCar.logDriver();
+
+// date object
+// var mydate = new Date();
+// console.log(mydate);
+// var myPastDate = new Date(2003, 11, 21, 15, 45,10);
+// var myFutureDate = new Date(2027, 11, 21);
+
+// console.log(myPastDate);
+// console.log(myFutureDate);
+
+// var birthday = new Date(1985, 8, 15, 11, 15, 25);
+// var birthday2 = new Date(1985, 8, 15, 11, 15, 25);
+
+// console.log(birthday.getMonth());
+// console.log(birthday.getFullYear());
+// console.log(birthday.getDay());
+// console.log(birthday.getDate());
+// console.log(birthday.getHours());
+// console.log(birthday.getTime());
+
+// if(birthday == birthday2){
+//     console.log("birthdays are same");
+// }else{
+//     console.log("birthdays are not same");
+// }
+
+// if(birthday.getTime() == birthday2.getTime()){
+//     console.log("birthdays are same");
+// }else{
+//     console.log("birthdays are not same");
+// }
+
+// changing html content 
+document.getElementsByClassName("content");
+var myContentDivs = document.getElementsByClassName("content");
+var myH2 = myContentDivs[1].getElementsByTagName("h2");
+myH2[0].innerHTML = "yo Ninjas";
+
+var myBody = document.getElementsByTagName("body");
+myBody[0].innerHTML;
+// this line will remove all content which is under the body tag and replaced with this line
+myBody[0].innerHTML = "<p>I am paragraph tag</p>";
+
+var myTitle = document.getElementById("page-title");
+myTitle.textContent;
+myTitle.textContent = "Yo Ninjas, get ready to learn!";
+
+// changing element attributes
+var link = document.getElementById("test");
+link.getAttribute("href");
+link.getAttribute("class");
+link.setAttribute("class","pie");
+
+// changing css styles
+var title = document.getElementById("page-title");
+title.setAttribute("style","position:relative; left: 10px;");
+title.style.left = "20px";
+title.style.top = "10px";
+title.style.colour = "red";
+title.style.backgroundColor = "blue";
+
+// adding elements to the dom
+var newLi = document.createElement("li");
+var newA = document.createElement("a");
+
+var menu = document.getElementById("main-nav").getElementsByTagName("ul")[0];
+menu.appendChild(newLi);
+newLi.appendChild(newA);
+
+newA.innerHTML = "Blog";
+
+// add element in first
+menu.insertBefore(newLi, menu.getElementsByTagName("li")[0]);
+
+// remove elements form the dom
+var parent = document.getElementById("main-nav").getElementsByTagName("ul")[0];
+var child = parent.getElementsByTagName("li")[0];
+var removed = parent.removeChild(child);
+// if i want to reinsert removed element
+parent.appendChild(removed);
+
+// javascript events
+var title = document.getElementById("page-title");
+title.onclick = function(){
+    alert("you clicked on me");
+}
+title.onmouseover = function(){
+    alert("you hovered you mouse over me");
+}
